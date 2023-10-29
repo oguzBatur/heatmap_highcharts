@@ -133,7 +133,7 @@ const weeklyData: WeekdayData[] = [
 const colorAxisOptions: ColorAxisOptions = {
   stops: [
       [0, '#FFFFFF'], // Start color
-      [1,Highcharts.getOptions().colors[0]] // End color
+      [1,"#2eb0fe"] // End color
   ]
 }
 
