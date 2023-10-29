@@ -1,4 +1,4 @@
-import Highcharts from "highcharts";
+import Highcharts, { ColorAxisOptions } from "highcharts";
 import highchartsHeatmap from "highcharts/modules/heatmap";
 import highchartsAccesibility from 'highcharts/modules/accessibility';
 import HighchartsReact from "highcharts-react-official";
@@ -130,6 +130,12 @@ const weeklyData: WeekdayData[] = [
   }
 ];
 
+const colorAxisOptions: ColorAxisOptions = {
+  stops: [
+      [0, '#FFFFFF'], // Start color
+      [1,Highcharts.getOptions().colors[0]] // End color
+  ]
+}
 
 // Calculates and returns the average and totals for the whole week.
 function calculateWeekdayStatistics(data: WeekdayData[]): WeekdayStatistics {
@@ -253,16 +259,7 @@ const options: Highcharts.Options = {
     },
   },
 
-  colorAxis: {
-    minColor: "#FFFFFF",
-    maxColor: Highcharts.getOptions().colors[0],
-    min: 0,
-    stops: [
-      [0, '#FFFFFF'], // Start color
-      [1,Highcharts.getOptions().colors[0]] // End color
-    ],
-  },
-
+  colorAxis: colorAxisOptions, 
   legend: {
     align: "right",
     layout: "vertical",
