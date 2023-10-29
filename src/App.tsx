@@ -384,6 +384,7 @@ function App() {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
   return (
     <div className="">
+      <div>
       <HighchartsReact
         options={options}
         highcharts={Highcharts}
@@ -391,6 +392,10 @@ function App() {
         updateArgs={[true, true, true]}
         key={"heatmap-chart"}
       />
+      </div>
+      <div>
+        <p>Projenin kaynak <a href="https://github.com/oguzBatur/heatmap_highcharts" target="_blank">kodu</a></p>
+      </div>
     </div>
   );
 }
